@@ -21,3 +21,9 @@ form {
 table {
 	float: left;
 }
+
+#add-user {
+	border-left: solid grey 1px; 
+	margin-left: 10px;
+	padding-left: 10px;
+}

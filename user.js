@@ -37,8 +37,8 @@ angular.module('User', [])
 				'email': $scope.user.email,
 				'numberPuppies': $scope.user.numberPuppies
 			});
-			$scope.usersForm.$setPristine();
 			$scope.user = angular.copy(defaultForm);
+			$scope.usersForm.$setPristine();
 		};
 
 		// Sorting/Searching

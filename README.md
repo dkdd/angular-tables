@@ -74,13 +74,13 @@ Now, within this DOM element, we can access the `person` object that has been de
 
 ### Directives
 
-Up until now we have shown *directives* - those things attatched to HTML elements and begin with `ng` - without really going into what they are. 
+Up until now we have shown *directives* - those things attached to HTML elements and begin with `ng` - without really going into what they are. 
 
 Essentially they are just functions that can be tied to a DOM element. Some are predefined in the core Angular API, such as `ng-app` and `ng-model`; however, directives can also be custom created.
 
 ##### Expressions
 
-Expressions, the `{{}}` items in the HTML, are a type of predefined directive that allow you to reference objects and variables attaced to the controller scope of the current DOM element.
+Expressions, the `{{}}` items in the HTML, are a type of predefined directive that allow you to reference objects and variables attached to the controller scope of the current DOM element.
 
 For example, the earlier code in which `{{person.name}}` was referenced which points back to:
 
@@ -101,7 +101,7 @@ Now, whatever is entered in the input box, will automatically be updated through
 
 ##### ng-repeat
 
-Another handy predefined directive is `ng-repeat`. THis lets you build out elements by iterating over similar attributes of the model. 
+Another handy predefined directive is `ng-repeat`. This lets you build out elements by iterating over similar attributes of the model. 
 
 Let's say say we have the following object in the controller:
 
