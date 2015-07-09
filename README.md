@@ -1,6 +1,6 @@
 ## Why Use Angular
 
-![WWE](http://giant.gfycat.com/JovialSimilarAnchovy.gif)
+![WWE](./JovialSimilarAnchovy.gif)
 
 1) Allows you to use declarative HTML to create a user interface by using `Directives`, special custom HTML tags which give behavior to HTML without needing to manipulate the DOM with Javascript. Basically this means you can template using HTML instead of something like Underscore or Mustache.
 
