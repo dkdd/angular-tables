@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
-	<script type="text/javascript" src="table.js"></script>
+	<script type="text/javascript" src="user.js"></script>
 
 </head>
 <body>
@@ -19,20 +19,46 @@
 			<input type="text" placeholder="Enter Last Name" ng-model="user.lname"> <br>
 			<input type="email" placeholder="Enter Email" ng-model="user.email"> <br>
 			<input type="number" placeholder="Enter Number of Puppies" ng-model="user.numberPuppies"> <br>
-			<button>Add User</button
-			<!-- Maybe add to button -->
+			<button>Add User</button>
 		</form>
 		<table>
+		<form name="usersForm">
+			<input type="text" placeholder="Search" ng-model="searchUser" class="search"> <br>
+		</form>
 			<thead>
 				<tr>
-					<th> First Name </th>
-					<th> Last Name </th>
-					<th> Email </th>
-					<th> Number of Puppies </th>
+					<th> 
+						<a ng-click="sortType= 'fname'; sortReverse = !sortReverse" class="bold-{{sortType == 'fname'}}"> 
+							First Name
+							<span ng-show="sortType == 'fname' && sortReverse">&#9660;</span>
+							<span ng-show="sortType == 'fname' && !sortReverse">&#9650;</span>
+						</a>
+					</th>
+					<th> 
+						<a ng-click="sortType= 'lname'; sortReverse = !sortReverse" class="bold-{{sortType == 'lname'}}">
+						 Last Name
+							<span ng-show="sortType == 'lname' && sortReverse">&#9660;</span>
+							<span ng-show="sortType == 'lname' && !sortReverse">&#9650;</span>								 
+						</a>
+					</th>
+					<th>
+						<a ng-click="sortType= 'email'; sortReverse = !sortReverse" class="bold-{{sortType == 'email'}}"> 
+							Email
+							<span ng-show="sortType == 'email' && sortReverse">&#9660;</span>
+							<span ng-show="sortType == 'email' && !sortReverse">&#9650;</span>									
+						</a>
+					</th>
+					<th>
+						<a ng-click="sortType= 'numberPuppies'; sortReverse = !sortReverse" class="bold-{{sortType == 'numberPuppies'}}"> 
+							Number of Puppies 
+							<span ng-show="sortType == 'numberPuppies' && sortReverse">&#9660;</span>
+							<span ng-show="sortType == 'numberPuppies' && !sortReverse">&#9650;</span>							
+						</a>
+					</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="user in users">
+				<tr ng-repeat="user in users | orderBy: sortType: sortReverse | filter: searchUser">
 					<td> {{ user.fname }} 				</td>
 					<td> {{ user.lname }} 				</td>
 					<td> {{ user.email }} 				</td>

@@ -1,0 +1,23 @@
+body {
+	margin: 10px;
+}
+
+th {
+	font-weight: normal;
+}
+
+.bold-true {
+	font-weight: bold;
+}
+
+a[ng-click]{
+    cursor: pointer;
+ 		text-decoration: underline;
+}
+
+form {
+	float: left;
+}
+table {
+	float: left;
+}

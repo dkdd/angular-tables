@@ -1,5 +1,6 @@
 angular.module('User', [])
 	. controller('UserController', ['$scope', function($scope){
+		// Adding Users to Table
 		$scope.users = [
 			{ 'fname': 'Dor',
 				'lname': 'Rubin',
@@ -22,7 +23,7 @@ angular.module('User', [])
 				'numberPuppies': 0
 			}
 		];
-
+		
 		$scope.addUser = function(){
 			var defaultForm = {
 				'fname' : '',
@@ -39,4 +40,11 @@ angular.module('User', [])
 			$scope.usersForm.$setPristine();
 			$scope.user = angular.copy(defaultForm);
 		};
+
+		// Sorting/Searching
+		$scope.sortType = 'fname';
+		$scope.sortReverse = false;
+		$scope.searchUser = '';
+
+		
 	}]);
