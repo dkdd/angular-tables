@@ -1,15 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="User">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Angular Tables</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
 	<script type="text/javascript" src="table.js"></script>
 
 </head>
 <body>
 	<h1>Hello, Tables</h1> 
+	<div ng-controller="UserController">
+		<form name="usersForm" ng-submit="addUser()">
+			<input type="text" placeholder="Enter First Name" ng-model="user.fname"> <br>
+			<input type="text" placeholder="Enter Last Name" ng-model="user.lname"> <br>
+			<input type="email" placeholder="Enter Email" ng-model="user.email"> <br>
+			<input type="number" placeholder="Enter Number of Puppies" ng-model="user.numberPuppies"> <br>
+			<button>Add User</button
+			<!-- Maybe add to button -->
+		</form>
+		<table>
+			<thead>
+				<tr>
+					<th> First Name </th>
+					<th> Last Name </th>
+					<th> Email </th>
+					<th> Number of Puppies </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in users">
+					<td> {{ user.fname }} 				</td>
+					<td> {{ user.lname }} 				</td>
+					<td> {{ user.email }} 				</td>
+					<td> {{ user.numberPuppies }} </td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
 </body>
 </html>
